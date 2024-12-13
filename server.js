@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Configurar CORS para permitir o frontend específico
 const corsOptions = {
-    origin: 'https://luxury-daffodil-bfe639.netlify.app', // Substitua pela origem do seu frontend
+    origin: '*', // Substitua pela origem do seu frontend
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'], // Métodos HTTP permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
 };
@@ -18,7 +18,7 @@ const corsOptions = {
 app.use(cors(corsOptions)); // Ativar o middleware de CORS
 
 // Permitir requisições preflight
-app.options('*', cors(corsOptions));
+// app.options('*', cors(corsOptions));
 
 // Configurar rotas
 app.use('/', publicRoutes);
